@@ -13,3 +13,61 @@
 
 # ReAnimator ASCII Art Generator
 A python script to generate ascii art from text or images.
+
+## Usage:
+```
+usage: reanimator.py [--greyscale] [--width WIDTH] [--palette PALETTE] [--palette-block] [--palette-ascii] [--keep-background] [--kernelize-image] [--gradient] [--gradient-strength GRADIENT_STRENGTH]
+                     [--hue-shift HUE_SHIFT] [--rainbow-hue-shift RAINBOW_HUE_SHIFT] [--median-blur MEDIAN_BLUR] [--text TEXT] [--text-font TEXT_FONT] [--text-size TEXT_SIZE] [--text-color TEXT_COLOR]
+                     [--html-output] [--help]
+                     [image ...]
+
+Convert text or images to ASCII art. Specify an image path or a a --text argument to generate ascii art.
+
+positional arguments:
+  image                 List of images to convert
+
+options:
+  --greyscale           Render the image in greyscale
+  --width WIDTH         Width of the ASCII art in characters, default is 64
+  --palette PALETTE     ASCII palette to use for rendering
+  --palette-block       Use the block ASCII palette '░▒▓█'
+  --palette-ascii       Use the extended ASCII palette '.-;=s$#@'
+  --keep-background     Keep the background in the ASCII art
+  --kernelize-image     Apply edge detection and attempt to draw the edges with lines
+  --gradient            Apply edge detection to the image
+  --gradient-strength GRADIENT_STRENGTH
+                        Control the strength of the gradient in edge detection
+  --hue-shift HUE_SHIFT
+                        Hue-shifts the image before transforming it
+  --rainbow-hue-shift RAINBOW_HUE_SHIFT
+                        Hue-shifts the image in rainbow pattern at the speed controlled by this argument
+  --median-blur MEDIAN_BLUR
+                        Median blurs the image with the given kernel size
+  --text TEXT           Generates an image of the text and then converts it to ascii art
+  --text-font TEXT_FONT
+                        The font used in text to image generation, defaults to roboto
+  --text-size TEXT_SIZE
+                        The font size used in text to image generation, defaults to 80
+  --text-color TEXT_COLOR
+                        Color of the text to image, must be a hex color code like '#ff03a1'
+  --html-output         Outputs the image as an html block rather than terminal text
+  --help                Show help message and exit.
+```
+
+Simple example:
+```sh
+python reanimator.py example/ubuntu.png
+```
+Text conversion:
+```sh
+python reanimator.py --text "hello world!" --width 128
+```
+
+## Examples:
+![screenshot 1](example/screenshot.png)
+![screenshot 2](example/screenshot2.png)
+![screenshot 3](example/screenshot3.png)
+
+
+
+

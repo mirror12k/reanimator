@@ -371,7 +371,7 @@ def print_colored_ascii_art_html(ascii_art, is_grayscale=False):
                 if is_grayscale or char == ' ':
                     html_output += char
                 else:
-                    html_output += f'<span style="color: rgb({color[0]},{color[1]},{color[2]});">{char}</span>'
+                    html_output += f'<span style="color:rgb({color[0]},{color[1]},{color[2]});">{char}</span>'
             html_output += '\n'
 
     html_output += '</pre>'
